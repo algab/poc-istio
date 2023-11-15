@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <title>PoC Istio</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./script.js"></script>
+  </head>
+  <body>
+    <div class="row-1">
+      <div class="app">
+        <div class="app-title">APP A</div>
+        <div class="app-buttons">
+          <button onclick="requestA()">A</button>
+          <button onclick="requestAB()">A -> B</button>
+          <button onclick="requestAC()">A -> C</button>
+        </div>
+      </div>
+    </div>
+    <div class="row-2">
+      <div class="app">
+        <div class="app-title">APP B</div>
+        <div class="app-buttons">
+          <button onclick="requestB()">B</button>
+          <button onclick="requestBA()">B -> A</button>
+          <button onclick="requestBC()">B -> C</button>
+        </div>
+      </div>
+      <div class="app">
+        <div class="app-title">APP C</div>
+        <div class="app-buttons">
+          <button onclick="requestC()">C</button>
+          <button onclick="requestCA()">C -> A</button>
+          <button onclick="requestCB()">C -> B</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

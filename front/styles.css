@@ -1,0 +1,41 @@
+body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.row-1 {
+  width: 100%;
+}
+
+.row-2 {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid gray;
+  border-radius: 10%;
+  width: 150px;
+  margin: 0 auto;
+}
+
+.app-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.app-buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+.app-buttons, button {
+  margin-bottom: 5px;
+}
