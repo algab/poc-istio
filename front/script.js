@@ -1,5 +1,5 @@
 function requestA() {
-  fetch("http://localhost:3000/a").then(async (response) => {
+  fetch("http://localhost/app-a/a").then(async (response) => {
     const data = await response.json();
     alert(data.message);
   }).catch(() => {
@@ -8,7 +8,7 @@ function requestA() {
 }
 
 function requestAB() {
-  fetch("http://localhost:3000/a/b").then(async (response) => {
+  fetch("http://localhost/app-a/a/b").then(async (response) => {
     const data = await response.json();
     alert(data.message);
   }).catch(() => {
@@ -17,7 +17,7 @@ function requestAB() {
 }
 
 function requestAC() {
-  fetch("http://localhost:3000/a/c").then(async (response) => {
+  fetch("http://localhost/app-a/a/c").then(async (response) => {
     const data = await response.json();
     alert(data.message);
   }).catch(() => {
@@ -26,7 +26,7 @@ function requestAC() {
 }
 
 function requestB() {
-  fetch("http://localhost:3001/b").then(async (response) => {
+  fetch("http://localhost/app-b/b").then(async (response) => {
     const data = await response.json();
     alert(data.message);
   }).catch(() => {
@@ -35,7 +35,7 @@ function requestB() {
 }
 
 function requestBA() {
-  fetch("http://localhost:3001/b/a").then(async (response) => {
+  fetch("http://localhost/app-b/b/a").then(async (response) => {
     const data = await response.json();
     alert(data.message);
   }).catch(() => {
@@ -44,7 +44,7 @@ function requestBA() {
 }
 
 function requestBC() {
-  fetch("http://localhost:3001/b/c").then(async (response) => {
+  fetch("http://localhost/app-b/b/c").then(async (response) => {
     const data = await response.json();
     alert(data.message);
   }).catch(() => {
@@ -53,7 +53,7 @@ function requestBC() {
 }
 
 function requestC() {
-  fetch("http://localhost:3002/c").then(async (response) => {
+  fetch("http://localhost/app-c/c").then(async (response) => {
     const data = await response.json();
     alert(data.message);
   }).catch(() => {
@@ -62,7 +62,7 @@ function requestC() {
 }
 
 function requestCA() {
-  fetch("http://localhost:3002/c/a").then(async (response) => {
+  fetch("http://localhost/app-c/c/a").then(async (response) => {
     const data = await response.json();
     alert(data.message);
   }).catch(() => {
@@ -71,7 +71,7 @@ function requestCA() {
 }
 
 function requestCB() {
-  fetch("http://localhost:3002/c/b").then(async (response) => {
+  fetch("http://localhost/app-c/c/b").then(async (response) => {
     const data = await response.json();
     alert(data.message);
   }).catch(() => {
