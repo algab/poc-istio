@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-c
+spec:
+  selector:
+    matchLabels:
+      app: app-c
+  template:
+    metadata:
+      labels:
+        app: app-c
+    spec:
+      containers:
+      - name: app-c
+        image: algab/poc-istio-app-c:1.0
+        env:
+          - name: APP_A
+            value: http://service-app-a.default.svc.cluster.local
+          - name: APP_B
+            value: http://service-app-b.default.svc.cluster.local
+        resources:
+          limits:
+            memory: "32Mi"
+            cpu: "125m"
+        ports:
+        - containerPort: 3002
