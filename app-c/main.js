@@ -20,6 +20,7 @@ app.get("/c/a", async (_, res) => {
     await axios(`${APP_A}/a`);
     res.status(200).json({ message: "Application C -> A" }).end();
   } catch (error) {
+    console.log(error);
     res.status(500).end();
   }
 });
@@ -29,6 +30,7 @@ app.get("/c/b", async (_, res) => {
     await axios(`${APP_B}/b`);
     res.status(200).json({ message: "Application C -> B" }).end();
   } catch (error) {
+    console.log(error);
     res.status(500).end();
   }
 });
