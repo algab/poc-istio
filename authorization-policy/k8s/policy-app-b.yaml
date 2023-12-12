@@ -14,4 +14,4 @@ spec:
             principals: ["cluster.local/ns/authorization-policy/sa/sa-app-c"]
       to:
         - operation:
-            methods: ["GET", "POST", "PUT", "DELETE"]
+            methods: ["*"]
