@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: front
+  namespace: authorization-policy
+spec:
+  selector:
+    matchLabels:
+      app: front
+  template:
+    metadata:
+      labels:
+        app: front
+    spec:
+      containers:
+        - name: front
+          image: algab/poc-istio-front:1.0
+          resources:
+            limits:
+              memory: "32Mi"
+              cpu: "125m"
+          ports:
+            - containerPort: 80

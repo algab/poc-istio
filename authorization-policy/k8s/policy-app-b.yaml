@@ -1,0 +1,17 @@
+apiVersion: "security.istio.io/v1beta1"
+kind: "AuthorizationPolicy"
+metadata:
+  name: "allow-policy-app-b"
+  namespace: authorization-policy
+spec:
+  selector:
+    matchLabels:
+      app: app-b
+  action: DENY
+  rules:
+    - from:
+        - source:
+            principals: ["cluster.local/ns/authorization-policy/sa/sa-app-c"]
+      to:
+        - operation:
+            methods: ["GET", "POST", "PUT", "DELETE"]

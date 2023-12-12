@@ -1,0 +1,37 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: sa-app-a
+  namespace: authorization-policy
+  labels:
+    account: app-a
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-a
+  namespace: authorization-policy
+spec:
+  selector:
+    matchLabels:
+      app: app-a
+  template:
+    metadata:
+      labels:
+        app: app-a
+    spec:
+      serviceAccountName: sa-app-a
+      containers:
+        - name: app-a
+          image: algab/poc-istio-app-a:1.0
+          env:
+            - name: APP_B
+              value: http://service-app-b.authorization-policy.svc.cluster.local
+            - name: APP_C
+              value: http://service-app-c.authorization-policy.svc.cluster.local
+          resources:
+            limits:
+              memory: "32Mi"
+              cpu: "125m"
+          ports:
+            - containerPort: 3000
