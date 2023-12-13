@@ -1,5 +1,5 @@
 function requestA() {
-  fetch("http://localhost/app-a/a").then(async (response) => {
+  fetch("http://poc-istio-authorization-policy.localdomain/app-a/a").then(async (response) => {
     const data = await response.json();
     alert(data.message);
   }).catch(() => {
@@ -8,25 +8,25 @@ function requestA() {
 }
 
 function requestAB() {
-  fetch("http://localhost/app-a/a/b").then(async (response) => {
+  fetch("http://poc-istio-authorization-policy.localdomain/app-a/a/b").then(async (response) => {
     const data = await response.json();
     alert(data.message);
   }).catch(() => {
-    alert("Error communicating with APP A")
+    alert("Error communicating with APP A with APP B")
   });
 }
 
 function requestAC() {
-  fetch("http://localhost/app-a/a/c").then(async (response) => {
+  fetch("http://poc-istio-authorization-policy.localdomain/app-a/a/c").then(async (response) => {
     const data = await response.json();
     alert(data.message);
   }).catch(() => {
-    alert("Error communicating with APP A")
+    alert("Error communicating with APP A with APP C")
   });
 }
 
 function requestB() {
-  fetch("http://localhost/app-b/b").then(async (response) => {
+  fetch("http://poc-istio-authorization-policy.localdomain/app-b/b").then(async (response) => {
     const data = await response.json();
     alert(data.message);
   }).catch(() => {
@@ -35,25 +35,25 @@ function requestB() {
 }
 
 function requestBA() {
-  fetch("http://localhost/app-b/b/a").then(async (response) => {
+  fetch("http://poc-istio-authorization-policy.localdomain/app-b/b/a").then(async (response) => {
     const data = await response.json();
     alert(data.message);
   }).catch(() => {
-    alert("Error communicating with APP B")
+    alert("Error communicating with APP B with APP A")
   });
 }
 
 function requestBC() {
-  fetch("http://localhost/app-b/b/c").then(async (response) => {
+  fetch("http://poc-istio-authorization-policy.localdomain/app-b/b/c").then(async (response) => {
     const data = await response.json();
     alert(data.message);
   }).catch(() => {
-    alert("Error communicating with APP B")
+    alert("Error communicating with APP B with APP C")
   });
 }
 
 function requestC() {
-  fetch("http://localhost/app-c/c").then(async (response) => {
+  fetch("http://poc-istio-authorization-policy.localdomain/app-c/c").then(async (response) => {
     const data = await response.json();
     alert(data.message);
   }).catch(() => {
@@ -62,19 +62,19 @@ function requestC() {
 }
 
 function requestCA() {
-  fetch("http://localhost/app-c/c/a").then(async (response) => {
+  fetch("http://poc-istio-authorization-policy.localdomain/app-c/c/a").then(async (response) => {
     const data = await response.json();
     alert(data.message);
   }).catch(() => {
-    alert("Error communicating with APP C")
+    alert("Error communicating with APP C with APP A")
   });
 }
 
 function requestCB() {
-  fetch("http://localhost/app-c/c/b").then(async (response) => {
+  fetch("http://poc-istio-authorization-policy.localdomain/app-c/c/b").then(async (response) => {
     const data = await response.json();
     alert(data.message);
   }).catch(() => {
-    alert("Error communicating with APP C")
+    alert("Error communicating with APP C with APP B")
   });
 }
