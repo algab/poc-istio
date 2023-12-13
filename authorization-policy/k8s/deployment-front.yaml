@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: front
-          image: algab/poc-istio-front:1.0
+          image: algab/poc-istio-authorization-policy-front:1.0
           resources:
             limits:
               memory: "32Mi"

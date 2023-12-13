@@ -23,7 +23,7 @@ spec:
       serviceAccountName: sa-app-a
       containers:
         - name: app-a
-          image: algab/poc-istio-app-a:1.0
+          image: algab/poc-istio-authorization-policy-app-a:1.0
           env:
             - name: APP_B
               value: http://service-app-b.authorization-policy.svc.cluster.local
