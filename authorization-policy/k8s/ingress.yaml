@@ -7,8 +7,12 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /$2
     nginx.ingress.kubernetes.io/configuration-snippet: rewrite ^(/front)$ $1/ redirect;
 spec:
+  tls:
+    - hosts:
+        - "authorization-policy.poc-istio.localdomain"
+      secretName: tls-authorization-policy
   rules:
-    - host: "poc-istio-authorization-policy.localdomain"
+    - host: "authorization-policy.poc-istio.localdomain"
       http:
         paths:
           - path: /front(/|$)(.*)
