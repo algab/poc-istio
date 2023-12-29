@@ -1,4 +1,4 @@
-apiVersion: "security.istio.io/v1beta1"
+apiVersion: "security.istio.io/v1"
 kind: "AuthorizationPolicy"
 metadata:
   name: "policy-app-b"
@@ -7,11 +7,15 @@ spec:
   selector:
     matchLabels:
       app: app-b
-  action: DENY
+  action: ALLOW
   rules:
     - from:
         - source:
-            principals: ["cluster.local/ns/authorization-policy/sa/sa-app-c"]
+            principals:
+              [
+                "cluster.local/ns/authorization-policy/sa/sa-gateway",
+                "cluster.local/ns/authorization-policy/sa/sa-app-a",
+              ]
       to:
         - operation:
             methods: ["*"]

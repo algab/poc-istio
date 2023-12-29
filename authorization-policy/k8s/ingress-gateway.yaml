@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-authorization-policy-gateway
+  namespace: authorization-policy
+spec:
+  tls:
+    - hosts:
+        - "authorization-policy.poc-istio.local"
+      secretName: tls-authorization-policy
+  rules:
+    - host: "authorization-policy.poc-istio.local"
+      http:
+        paths:
+          - path: /gateway
+            pathType: Prefix
+            backend:
+              service:
+                name: service-gateway
+                port:
+                  number: 80

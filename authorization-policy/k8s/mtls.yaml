@@ -1,0 +1,38 @@
+apiVersion: security.istio.io/v1beta1
+kind: PeerAuthentication
+metadata:
+  name: mtls-authorization-policy
+  namespace: authorization-policy
+spec:
+  mtls:
+    mode: STRICT
+---
+apiVersion: security.istio.io/v1beta1
+kind: PeerAuthentication
+metadata:
+  name: mtls-authorization-policy-front
+  namespace: authorization-policy
+spec:
+  selector:
+    matchLabels:
+      app: front
+  mtls:
+    mode: STRICT
+  portLevelMtls:
+    80:
+      mode: DISABLE
+---
+apiVersion: security.istio.io/v1beta1
+kind: PeerAuthentication
+metadata:
+  name: mtls-authorization-policy-gateway
+  namespace: authorization-policy
+spec:
+  selector:
+    matchLabels:
+      app: gateway
+  mtls:
+    mode: STRICT
+  portLevelMtls:
+    3003:
+      mode: PERMISSIVE

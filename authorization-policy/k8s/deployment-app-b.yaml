@@ -31,7 +31,7 @@ spec:
               value: http://service-app-c.authorization-policy.svc.cluster.local
           resources:
             limits:
-              memory: "32Mi"
-              cpu: "125m"
+              memory: "100Mi"
+              cpu: "200m"
           ports:
             - containerPort: 3001

@@ -7,11 +7,15 @@ spec:
   selector:
     matchLabels:
       app: app-a
-  action: DENY
+  action: ALLOW
   rules:
     - from:
         - source:
-            principals: ["cluster.local/ns/authorization-policy/sa/sa-app-b"]
+            principals:
+              [
+                "cluster.local/ns/authorization-policy/sa/sa-gateway",
+                "cluster.local/ns/authorization-policy/sa/sa-app-c",
+              ]
       to:
         - operation:
             methods: ["*"]
