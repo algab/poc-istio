@@ -1,0 +1,61 @@
+# apiVersion: networking.istio.io/v1beta1
+# kind: Gateway
+# metadata:
+#   name: tst-istio-gateway
+# spec:
+#   selector:
+#     istio: ingressgateway
+#   servers:
+#     - port:
+#         number: 80
+#         name: http
+#         protocol: HTTP
+#       hosts:
+#         - "poc-istio.local"
+# ---
+# apiVersion: networking.istio.io/v1beta1
+# kind: VirtualService
+# metadata:
+#   name: istio-virtual-service
+# spec:
+#   hosts:
+#     - "poc-istio.local"
+#   gateways:
+#     - tst-istio-gateway
+#   http:
+#     - name: "front"
+#       match:
+#         - uri:
+#             prefix: "/front"
+#       rewrite:
+#         uri: "/"
+#       route:
+#         - destination:
+#             host: service-front.default.svc.cluster.local
+#     - name: "app-a"
+#       match:
+#         - uri:
+#             prefix: "/app-a"
+#       rewrite:
+#         uri: " "
+#       route:
+#         - destination:
+#             host: service-app-a.default.svc.cluster.local
+#     - name: "app-b"
+#       match:
+#         - uri:
+#             prefix: "/app-b"
+#       rewrite:
+#         uri: " "
+#       route:
+#         - destination:
+#             host: service-app-b.default.svc.cluster.local
+#     - name: "app-c"
+#       match:
+#         - uri:
+#             prefix: "/app-c"
+#       rewrite:
+#         uri: " "
+#       route:
+#         - destination:
+#             host: service-app-c.default.svc.cluster.local
