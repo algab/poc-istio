@@ -7,30 +7,26 @@ const APP_C = process.env.APP_C || "http://localhost:3002";
 
 const router = express.Router();
 
+const pathResolver = (request) => `/${request.params[0]}`;
+
 router.use(
   "/app-a/*",
   proxy(APP_A, {
-    proxyReqPathResolver: (req) => {
-      return `/${req.params[0]}`;
-    },
+    proxyReqPathResolver: pathResolver,
   })
 );
 
 router.use(
   "/app-b/*",
   proxy(APP_B, {
-    proxyReqPathResolver: (req) => {
-      return `/${req.params[0]}`;
-    },
+    proxyReqPathResolver: pathResolver,
   })
 );
 
 router.use(
   "/app-c/*",
   proxy(APP_C, {
-    proxyReqPathResolver: (req) => {
-      return `/${req.params[0]}`;
-    },
+    proxyReqPathResolver: pathResolver,
   })
 );
 
