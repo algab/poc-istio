@@ -1,5 +1,5 @@
 function requestA() {
-  fetch("https://authorization-policy.poc-istio.localdomain/app-a/a")
+  fetch("https://authorization-policy.poc-istio.local/gateway/app-a/a")
     .then(async (response) => {
       const data = await response.json();
       alert(data.message);
@@ -10,7 +10,7 @@ function requestA() {
 }
 
 function requestAB() {
-  fetch("https://authorization-policy.poc-istio.localdomain/app-a/a/b")
+  fetch("https://authorization-policy.poc-istio.local/gateway/app-a/a/b")
     .then(async (response) => {
       const data = await response.json();
       alert(data.message);
@@ -21,7 +21,7 @@ function requestAB() {
 }
 
 function requestAC() {
-  fetch("https://authorization-policy.poc-istio.localdomain/app-a/a/c")
+  fetch("https://authorization-policy.poc-istio.local/gateway/app-a/a/c")
     .then(async (response) => {
       const data = await response.json();
       alert(data.message);
@@ -32,7 +32,7 @@ function requestAC() {
 }
 
 function requestB() {
-  fetch("https://authorization-policy.poc-istio.localdomain/app-b/b")
+  fetch("https://authorization-policy.poc-istio.local/gateway/app-b/b")
     .then(async (response) => {
       const data = await response.json();
       alert(data.message);
@@ -43,7 +43,7 @@ function requestB() {
 }
 
 function requestBA() {
-  fetch("https://authorization-policy.poc-istio.localdomain/app-b/b/a")
+  fetch("https://authorization-policy.poc-istio.local/gateway/app-b/b/a")
     .then(async (response) => {
       const data = await response.json();
       alert(data.message);
@@ -54,7 +54,7 @@ function requestBA() {
 }
 
 function requestBC() {
-  fetch("https://authorization-policy.poc-istio.localdomain/app-b/b/c")
+  fetch("https://authorization-policy.poc-istio.local/gateway/app-b/b/c")
     .then(async (response) => {
       const data = await response.json();
       alert(data.message);
@@ -65,7 +65,7 @@ function requestBC() {
 }
 
 function requestC() {
-  fetch("https://authorization-policy.poc-istio.localdomain/app-c/c")
+  fetch("https://authorization-policy.poc-istio.local/gateway/app-c/c")
     .then(async (response) => {
       const data = await response.json();
       alert(data.message);
@@ -76,7 +76,7 @@ function requestC() {
 }
 
 function requestCA() {
-  fetch("https://authorization-policy.poc-istio.localdomain/app-c/c/a")
+  fetch("https://authorization-policy.poc-istio.local/gateway/app-c/c/a")
     .then(async (response) => {
       const data = await response.json();
       alert(data.message);
@@ -87,7 +87,7 @@ function requestCA() {
 }
 
 function requestCB() {
-  fetch("https://authorization-policy.poc-istio.localdomain/app-c/c/b")
+  fetch("https://authorization-policy.poc-istio.local/gateway/app-c/c/b")
     .then(async (response) => {
       const data = await response.json();
       alert(data.message);
