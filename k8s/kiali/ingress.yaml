@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-kiali
+  namespace: istio-system
+spec:
+  tls:
+    - hosts:
+        - "kiali.poc-istio.local"
+      secretName: tls-kiali
+  rules:
+    - host: "kiali.poc-istio.local"
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: kiali
+                port:
+                  number: 20001
