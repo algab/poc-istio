@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-v2
+  namespace: traffic
+  labels:
+    app: app
+    version: v2
+spec:
+  selector:
+    matchLabels:
+      app: app
+      version: v2
+  template:
+    metadata:
+      labels:
+        app: app
+        version: v2
+    spec:
+      containers:
+      - name: app
+        image: algab/poc-istio-traffic-app:1.0
+        resources:
+          limits:
+            memory: "80Mi"
+            cpu: "200m"
+        ports:
+        - containerPort: 3000

@@ -1,0 +1,15 @@
+apiVersion: networking.istio.io/v1beta1
+kind: Gateway
+metadata:
+  name: traffic-gateway
+  namespace: traffic
+spec:
+  selector:
+    istio: ingressgateway
+  servers:
+    - port:
+        name: http
+        protocol: HTTP
+        number: 80
+      hosts:
+        - traffic.poc-istio.local

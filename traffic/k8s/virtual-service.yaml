@@ -1,0 +1,28 @@
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: traffic-virtual-service
+  namespace: traffic
+spec:
+  hosts:
+    - traffic.poc-istio.local
+  gateways:
+    - traffic-gateway
+  http:
+    - name: application
+      match:
+        - uri:
+            prefix: /application
+      rewrite:
+        uri: /application
+      route:
+        - destination:
+            host: service-app-v1.traffic.svc.cluster.local
+            port:
+              number: 80
+          weight: 70
+        - destination:
+            host: service-app-v2.traffic.svc.cluster.local
+            port:
+              number: 80
+          weight: 30
