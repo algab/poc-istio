@@ -18,6 +18,17 @@ brew install ubuntu/microk8s/microk8s
 
 To install on Windows and get more information just go to the following website: https://microk8s.io
 
+### Install mkcert
+
+> mkcert is a simple tool for making locally-trusted development certificates. It requires no configuration.
+
+#### Apply mkcert
+
+```
+mkcert -install
+```
+
+For more information: https://github.com/FiloSottile/mkcert
 
 ### Install addons
 
