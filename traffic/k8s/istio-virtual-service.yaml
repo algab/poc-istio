@@ -28,5 +28,5 @@ spec:
           weight: 90
       retries:
         attempts: 3
-        perTryTimeout: 30s
+        perTryTimeout: 1m
         retryOn: "5xx"
