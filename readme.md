@@ -30,6 +30,16 @@ mkcert -install
 
 For more information: https://github.com/FiloSottile/mkcert
 
+### Hosts
+
+Add the following entries to your host file.
+
+```
+127.0.1.1       authorization-policy.poc-istio.local
+127.0.1.1       kiali.poc-istio.local
+10.64.140.43    traffic.poc-istio.local
+```
+
 ### Install addons
 
 #### Metallb
